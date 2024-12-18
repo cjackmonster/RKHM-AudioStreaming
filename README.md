@@ -17,3 +17,25 @@ Username: Email: admin@admin.com
 Pass: encryptionisnotacceptable
 
 **Stay safe, feel free, be contributed**
+
+## Ready to USE Tool List
+1) Lorem AI
+2) Bulk Importer
+3) Fake User Genarator
+4) cURL Proxy
+5) AI Translator
+6) Google auto translator
+7) wikipedia scrapper
+8) Soundcloud scrapper
+9) Spotify multi account
+10) Music torrent
+11) Podcast cover dowloader
+12) Archiver
+
+## Ready to USE Plugins
+1) Audiobook
+2) Radio Plugin
+3) User-Points
+4) Messenger
+5) Affiliate Program
+6) Extra-Payment Gateways
