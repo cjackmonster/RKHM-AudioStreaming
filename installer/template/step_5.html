@@ -1,0 +1,49 @@
+<div class="title">Step 4: Server</div>
+
+<div class="checks">
+
+  <div class="check crond sta_%CROND_STA_TEXT%">
+    <div class="c_title"><span>Setup Cronjob</span> <div class="c_sta">%CROND_STA_TEXT%</div></div>
+    <div class="c_description ok">
+      Cron job is activated. You can manage it later from admin-area
+    </div>
+    <div class="c_description failed">
+      Cron job is not activated yet. Please use your server management platform to create a cron job that runs following command every minute. <a href='https://support.busyowl.co/documentation/installation_step4' target='_blank'>Documentation</a>
+      <div class="c_command"><span>* * * * *</span>%CROND_COMMAND%</div>
+    </div>
+  </div>
+
+  <div class="check htaccess sta_%HTACCESS_STA_TEXT%">
+    <div class="c_title"><span>.htaccess Existence</span> <div class="c_sta">%HTACCESS_STA_TEXT%</div></div>
+    <div class="c_description ok">
+      All .htaccess files have been uploaded
+    </div>
+    <div class="c_description failed">
+      %HTACCESS_ERROR%
+    </div>
+  </div>
+
+  <div class="check htaccess2 sta_%HTACCESS2_STA_TEXT%">
+    <div class="c_title"><span>.htaccess Check</span> <div class="c_sta">%HTACCESS2_STA_TEXT%</div></div>
+    <div class="c_description ok">
+      All .htaccess files are working
+    </div>
+    <div class="c_description failed">
+      %HTACCESS2_ERROR%
+    </div>
+  </div>
+
+  <div class="check timezone sta_%TIMEZONE_STA_TEXT%">
+    <div class="c_title"><span>Timezone</span> <div class="c_sta">%TIMEZONE_STA_TEXT%</div></div>
+    <div class="c_description ok">
+      These timezones match your database's timezone. Select one
+
+      <select class="bof_input">%TIMEZONE_OPTIONS%</select>
+    </div>
+    <div class="c_description failed">
+      %TIMEZONE_ERROR%
+    </div>
+  </div>
+
+
+</div>

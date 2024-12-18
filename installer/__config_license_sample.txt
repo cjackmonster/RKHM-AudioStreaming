@@ -1,0 +1,11 @@
+<?php
+
+define( "purchase_code", "%PURCHASE_CODE%" );
+define( "sign_code", "%SIGN_CODE%" );
+define( "owner", "%OWNER%" );
+
+define( "sign_key", "%SIGN_KEY%" );
+define( "vapid_public", "%VAPID_PUBLIC%" );
+define( "vapid_private", "%VAPID_PRIVATE%" );
+
+?>

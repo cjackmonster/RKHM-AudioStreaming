@@ -1,0 +1,2 @@
+window.cache={set:function(name,value,acceptZero){if(!value)
+return window.cache.remove(name);return window.localStorage.setItem(window.config.cache_prefix+name,value)},get:function(name,defaultValue){defaultValue=defaultValue?defaultValue:!1;var output=!1;output=window.localStorage.getItem(window.config.cache_prefix+name);if(output)return output;return defaultValue},remove:function(name){return window.localStorage.removeItem(window.config.cache_prefix+name)},removeAll:function(){return window.localStorage.clear()}}

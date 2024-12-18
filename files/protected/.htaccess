@@ -1,0 +1,5 @@
+Options -Indexes
+
+RewriteEngine On
+
+RewriteRule ^(.*)$ ../../protector.php?path=$1 [NC,L,QSA]

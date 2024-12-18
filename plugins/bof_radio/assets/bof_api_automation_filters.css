@@ -1,0 +1,17 @@
+#automation_results {
+    padding: calc( var(--padding) * 3 );
+    border: 2px solid rgba( var( --ui_color ), 0.05 );
+    border-radius: 6px;
+}
+
+#automation_results.loading {
+    color: rgba(var(--ui_color),0.4);
+    font-weight: 600;
+    letter-spacing: 1px;
+    font-size: 90%;
+}
+#automation_results.failed {
+    color: rgba(var(--c_red),0.66);
+    border: 2px solid rgba( var( --c_red ), 0.1 );
+    letter-spacing: 1px;
+}

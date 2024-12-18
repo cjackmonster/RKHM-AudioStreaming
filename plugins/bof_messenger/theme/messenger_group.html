@@ -1,0 +1,23 @@
+<div class="group">
+
+  <div class="group_data item no_action" data-id="messenger_group_$bof ? content^group^hash$" id="bof_messenger_group_$bof ? content^group^hash$">
+    <div class="name">$bof ? content^group^name$</div>
+    <div class="users">
+      $bof foreach content^group^bof_rel_users$
+      <div class="cover">$bof ? bof_file_avatar$</div>
+      $!bof foreach content^group^bof_rel_users$
+    </div>
+  </div>
+
+  <div class="group_messages">
+    $bof foreach content^group_messages$
+      $bof html ? __path=messenger_message __dir=no __base=plugins/bof_messenger/theme$
+    $!bof foreach content^group_messages$
+  </div>
+
+  <div class="group_new_message">
+    <textarea name="_text" class="bof_input" placeholder="Enter your reply here"></textarea>
+    <div class="btn btn-primary">Send <div class="loader"></div></div>
+  </div>
+
+</div>

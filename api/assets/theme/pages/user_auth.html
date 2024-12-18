@@ -1,0 +1,48 @@
+<div class="auth_form_wrapper">
+
+  <div class="logo_wrapper">
+    $bof if Config^brand^logo$
+    <a href='/'><img src='$bof ? ?$' alt='logo'></a>
+    $!bof if Config^brand^logo$
+  </div>
+
+  <div class="auth_form">
+
+    <h1>$bof ? auth^title$</h1>
+
+    $bof if auth^action = login$
+    $bof if Parent^Config^setting^social_login$
+    <div class="sl_wrapper loading">
+      <span class="mdi mdi-refresh"></span>
+    </div>
+    $!bof if Parent^Config^setting^social_login$
+    $!bof if auth^action = login$
+
+    <div class="form_wrapper">
+      <form method="post" class="bof validate" data-action="$bof ? auth^action$" data-callback="app.pages.user_auth.functions.checker" data-callbefore="app.pages.user_auth.functions.before" data-endpoint="user_auth?do=$bof ? auth^action$&bof=submit" >
+
+        $bof foreach auth^inputs$
+        <div class="input-group">
+          <span class="input-group-text" ><span class="mdi mdi-$bof ? icon$"></span></span>
+          $bof ? html$
+        </div>
+        $!bof foreach auth^inputs$
+
+        <div class="message_holder"><span class="icon mdi"></span><span class="message"></span></div>
+
+        $bof if auth^content$
+          $bof ? ?$
+        $!bof if auth^content$
+
+        <div class="btn_wrapper">
+          $bof foreach auth^btns$
+            $bof ? ?$
+          $!bof foreach auth^btns$
+        </div>
+
+      </form>
+    </div>
+
+  </div>
+
+</div>

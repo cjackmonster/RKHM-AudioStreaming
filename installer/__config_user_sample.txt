@@ -1,0 +1,32 @@
+<?php
+
+define( "web_address", "%WEB_ADDRESS%" );
+
+define( "db_host", "%DB_HOST%" );
+define( "db_user", "%DB_USER%" );
+define( "db_pass", "%DB_PASS%" );
+define( "db_name", "%DB_NAME%" );
+
+define( "client_private", false );
+define( "client_constructing", false );
+define( "client_give_attribute", false );
+define( "client_auto_images", true );
+
+define( "session_ip_lock", false );
+define( "session_pf_lock", false );
+define( "session_max", false );
+define( "session_life", false );
+define( "session_cc", 10 );
+
+define( "api_send_diagnostics", "%DIAGNOSTICS%" );
+
+define( "production", false );
+define( "session_live", true );
+
+define( "cf_cache", false );
+define( "nginx", false );
+define( "admin_ip_lock", false );
+
+date_default_timezone_set( "%TIMEZONE%" );
+
+?>

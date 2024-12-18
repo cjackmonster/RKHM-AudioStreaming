@@ -1,0 +1,6 @@
+#setting_form .row .col:nth-child(2) {
+    display: none;
+}
+.settings_wrapper #save_button.t2.bof_done {
+  width: 400px;
+}

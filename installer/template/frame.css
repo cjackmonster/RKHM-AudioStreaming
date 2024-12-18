@@ -1,0 +1,480 @@
+body {
+  height: 100vh;
+  width: 100vw;
+  overflow: auto;
+  padding: 0;
+  margin: 0;
+  background: #000;
+  font-family: 'Share Tech Mono', monospace;
+}
+#main {
+  width: 750px;
+  max-height: 600px;
+  height: fit-content;
+  position: absolute;
+  right: 0;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  background: #fff;
+  border-radius: 5px;
+  overflow: auto;
+  display: flex;
+  overflow-x: hidden
+}
+#main:before,
+#main:after {
+  content: "";
+  display: block;
+  position: fixed;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  top: 0;
+  margin: auto;
+}
+#main:before{
+  background: black;
+  z-index: -1;
+  opacity: 0.7;
+}
+#main:after {
+  background: url('https://source.unsplash.com/random/900x900/?geometric') center center no-repeat;
+  background-size: cover;
+  z-index: -2;
+  filter: blur(6px);
+}
+
+#main .side {
+  width: 200px;
+  /* background: red; */
+  flex-shrink: 0;
+  box-sizing: border-box;
+  /* padding: 10px; */
+}
+#main .side .logo {
+  margin: 30px 0px 10px 30px;
+}
+#main .side .steps {
+  padding: 20px 0;
+  letter-spacing: -1px;
+}
+#main .side .steps .step {
+  padding: 10px;
+  padding-left: 30px;
+  margin-bottom: 5px;
+}
+#main .side .steps .step.active {
+  background: rgb(23 134 216 / 15%);
+  position: RELATIVE;
+  overflow: hidden;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 40px;
+}
+#main .side .steps .step.active:before,
+#main .side .steps .step.active:after{
+  content: "";
+  display: block;
+  position: absolute;
+  right: -50px;
+  top: 0;
+  bottom: 50%;
+  background: white;
+  width: 93px;
+  transform: rotate(55deg);
+}
+#main .side .steps .step.active:before {
+  top: 50%;
+  bottom: 0;
+  transform: rotate(125deg);
+}
+#main .side .steps .step:last-child {
+  margin-bottom: 0;
+}
+
+#main #step {
+  width: 500px;
+  padding: 30px 20px;
+  flex-shrink: 0;
+  box-sizing: border-box;
+  margin-left: 50px;
+  font-family: 'Roboto';
+  font-size: 11pt;
+  line-height: 1.5;
+  max-height: 600px;
+  overflow: auto;
+}
+#main #step::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0);
+  background-color: #f5f5f500;
+}
+#main #step::-webkit-scrollbar {
+  width: 6px;
+  background-color: #00000000;
+}
+#main #step::-webkit-scrollbar-thumb {
+  background-color: #1786d8;
+  border-top-right-radius: 4px;
+  border-bottom-right-radius: 4px
+}
+
+#main #step .title {
+  font-size: 110%;
+  margin-bottom: 20px;
+  font-weight: 600;
+}
+#main #step ul {
+  margin: 25px 0;
+  font-size: 90%
+}
+#main #step ul li {
+  margin-bottom: 15px;
+  line-height: 1.3
+}
+#main #step a {
+  text-decoration: none;
+  color: #2196f3;
+}
+#main #step underline {
+  text-decoration: underline;
+  margin: 0 3px;
+}
+
+#main #step .message_holder {
+  padding: 10px;
+  border-radius: 10px;
+  color: #fff;
+  margin: 20px 0;
+  font-weight: 400
+}
+#main #step .message_holder:empty {
+  display: none
+}
+#main #step .message_holder.ok {
+  background: #008d45
+}
+#main #step .message_holder.nok {
+  background: #d72222
+}
+#main #step .button_wrapper .btn {
+  display: inline-block;
+  background: #1786d8;
+  padding: 3px 16px;
+  color: #fff;
+  border-radius: 51px;
+  font-weight: 500;
+  font-size: 10pt;
+  cursor: pointer;
+  transition: 200ms ease all;
+  /* font-family: 'Share Tech Mono', monospace; */
+  box-shadow: rgb(136 165 191 / 48%) 6px 2px 16px 0px, rgb(255 255 255 / 80%) -6px -2px 16px 0px;
+  position: relative;
+}
+#main #step .message_holder i {
+  text-decoration: none;
+  font-style: normal;
+  margin-right: 2px;
+  opacity: 0.5;
+  font-size: 90%;
+}
+#main #step .message_holder b {
+  font-weight: 500
+}
+
+#main #step .button_wrapper {
+  text-align: right;
+}
+#main #step .button_wrapper .btn:hover {
+  box-shadow: 0px 0px 20px 0px #1786d8;
+}
+#main #step .button_wrapper .btn.retry {
+  background: #d72222
+}
+#main #step .button_wrapper .btn.retry:hover {
+  box-shadow: 0px 0px 20px 0px #d72222;
+}
+#main #step .button_wrapper.loading span.text {
+  color: rgba(255,255,255,0);
+}
+#main #step .button_wrapper.loading .lds-ellipsis {
+  display: inline-block;
+}
+#main #step .button_wrapper.failed .btn {
+  display: none;
+}
+
+#main #step .extensions {
+  margin-bottom: 25px;
+}
+#main #step .extensions .extension {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  margin-bottom: 5px;
+  position: relative;
+}
+#main #step .extensions .extension .name {
+  font-weight: 600;
+  padding-right: 10px;
+}
+#main #step .extensions .extension:after {
+  content: "";
+  display: block;
+  position: absolute;
+  right: 0;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  height: 0;
+  z-index: 0;
+  border-bottom: 1px dashed rgba(0,0,0,0.1);
+}
+#main #step .extensions .extension > div {
+  background: #fff;
+  z-index: 2;
+}
+#main #step .extensions .extension .sta {
+  padding-left: 10px;
+  font-size: 90%;
+  font-weight: 500;
+}
+#main #step .extensions .extension .sta.ok {
+  color: #008d45;
+}
+#main #step .extensions .extension .sta.nok {
+  color: #d72222;
+}
+
+#main #step form {
+  display: block;
+  margin: 30px 0;
+}
+#main #step form .input_wrapper {
+  margin-bottom: 30px;
+}
+#main #step form .input_wrapper label {
+  display: block;
+  margin-bottom: 5px;
+  font-size: 95%;
+  font-weight: 500;
+}
+#main #step form .input_wrapper .bof_input {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 10px;
+  border: 1px solid rgba(0,0,0,0.15);
+  border-radius: 5px;
+}
+#main #step form .input_wrapper tip {
+  display: block;
+  margin-top: 5px;
+  font-size: 85%;
+  font-weight: 400;
+  opacity: 0.6;
+}
+#main #step form .input_wrapper tip i {
+  font-style: normal;
+  font-size: 95%
+}
+#main #step form .input_wrapper .bof_input:focus-visible {
+  outline: none;
+  border-color: #1786d8;
+  color: #000;
+}
+#main #step form .input_wrapper:last-child {
+  margin-bottom: 0;
+}
+#main #step form .input_wrapper .bof_input:read-only {
+    color: #9f9f9f;
+    cursor: not-allowed;
+    border: 1px solid rgba(0,0,0,0.1) !important;
+}
+
+#main #step .checks {}
+#main #step .checks .check {
+    margin-bottom: 45px;
+}
+#main #step .checks .check .c_description {
+    display: none;
+    font-size: 90%
+}
+#main #step .checks .check.sta_ok .c_description.ok {
+    display: block
+}
+#main #step .checks .check.sta_failed .c_description.failed {
+    display: block;
+    font-size: 95%;
+}
+#main #step .checks .check .c_description .c_command {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 10pt;
+    margin: 10px 0;
+    background: rgba( 0, 0, 0, 0.07 );
+    padding: 10px;
+    border-radius: 6px;
+}
+#main #step .checks .check .c_description .c_command span {
+    margin-right: 15px;
+    font-size: 90%;
+    font-family: 'Roboto';
+    opacity: 0.5;
+    position: relative;
+    top: 2px;
+    font-weight: 500;
+}
+#main #step .checks .check .c_title {
+    font-weight: 500;
+    font-size: 97%;
+    position: relative;
+    margin-bottom: 15px;
+}
+#main #step .checks .check .c_title .c_sta {
+    position: absolute;
+    right: 0;
+    top: 0;
+    background: #fff;
+    z-index: 3;
+    padding: 6px 9px 4px;
+    line-height: 1;
+    border-radius: 5px;
+    font-size: 90%;
+    text-transform: capitalize;
+    letter-spacing: 0.8px;
+}
+#main #step .checks .check.sta_failed .c_title .c_sta {
+    background: #d72222;
+    color: #fff;
+}
+#main #step .checks .check.sta_ok .c_title .c_sta {
+    background: #008d45;
+    color: #fff;
+}
+#main #step .checks .check .c_title:before {
+    border-bottom: 1px dashed rgba(0,0,0,0.2);
+    content: "";
+    display: block;
+    position: absolute;
+    right: 0;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    height: 0;
+}
+#main #step .checks .check .c_title span {
+    background: #fff;
+    display: inline-block;
+    position: relative;
+    padding-right: 10px;
+}
+#main #step .checks .check .c_description select {
+    margin-top: 20px;
+    display: block;
+    padding: 7px 12px;
+    border: 1px solid #00000017;
+    border-radius: 4px;
+}
+
+#main #step form .input_wrapper .types {
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: column;
+}
+#main #step form .input_wrapper .types .type {
+  display: flex;
+  position: relative;
+}
+#main #step form .input_wrapper .types .type input {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+  opacity: 0;
+}
+#main #step form .input_wrapper .types .type .detail_wrapper {
+  margin: 0 -20px 0 -20px;
+  padding: 15px 30px 15px 20px;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  color: #444;
+  font-size: 90%
+}
+#main #step form .input_wrapper .types .type .detail_wrapper  b {
+  font-size: 105%;
+  color: #000;
+}
+#main #step form .input_wrapper .types .type input:checked ~ .detail_wrapper {
+  background: rgba( 23, 134, 216, .14 )
+}
+#main #step form .input_wrapper .types .type input:checked ~ .detail_wrapper b {
+  color: #1786d8;
+}
+
+.lds-ellipsis {
+  display: inline-block;
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  top:0;
+  right:0;
+  left:0;
+  bottom:0;
+  margin: auto;
+  display: none;
+}
+.lds-ellipsis div {
+  position: absolute;
+  top: 16px;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #fff;
+  animation-timing-function: cubic-bezier(0, 1, 1, 0);
+}
+.lds-ellipsis div:nth-child(1) {
+  left: 4px;
+  animation: lds-ellipsis1 0.6s infinite;
+}
+.lds-ellipsis div:nth-child(2) {
+  left: 4px;
+  animation: lds-ellipsis2 0.6s infinite;
+}
+.lds-ellipsis div:nth-child(3) {
+  left: 16px;
+  animation: lds-ellipsis2 0.6s infinite;
+}
+.lds-ellipsis div:nth-child(4) {
+  left: 28px;
+  animation: lds-ellipsis3 0.6s infinite;
+}
+@keyframes lds-ellipsis1 {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@keyframes lds-ellipsis3 {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(0);
+  }
+}
+@keyframes lds-ellipsis2 {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(12px, 0);
+  }
+}
